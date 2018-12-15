@@ -3,13 +3,13 @@ var maxResult = 0;
 
 function getMaxNumber(arr) {
   for (var i = 0; i < arr.length; i++) {
-    console.log("Образец под номером" + (i + 1) + "- результат" + arr[i]);
+    console.log('Образец под номером' + (i + 1) + '- результат' + arr[i]);
     if (maxResult < arr[i]) {
       maxResult = arr[i];
     }
   }
-  console.log("Всего проведено исследований:" + i);
-  console.log("Наилучший результат: " + maxResult);
+  console.log('Всего проведено исследований:' + i);
+  console.log('Наилучший результат: ' + maxResult);
 }
 
 function getMaximalNumbers(arr, maxResult) {
@@ -20,17 +20,17 @@ function getMaximalNumbers(arr, maxResult) {
     }
   }
   console.log(
-    "Образцы с наилучшими результатами под номерами" + arreyOfResults
+    'Образцы с наилучшими результатами под номерами' + arreyOfResults
   );
 }
 getMaxNumber(arr);
 getMaximalNumbers(arr, maxResult);
 
 var car = {
-  brand: "BMW",
-  year: "2018",
+  brand: 'BMW',
+  year: '2018',
   passing: 10000,
-  color: "black",
+  color: 'black',
   engine: false,
   motion: false,
   fuel: false,
@@ -38,29 +38,29 @@ var car = {
     if (this.fuel) {
       this.engine = true;
     } else {
-      console.log("Заправ бмв");
+      console.log('Заправ бмв');
     }
   },
   go: function() {
     if (this.engine) {
       this.motion = true;
-      console.log( "Машина " + this.year + " марки " + this.brand + " цвета " + this.color + " поехала!" );
+      console.log( 'Машина ' + this.year + ' марки ' + this.brand + ' цвета ' + this.color + ' поехала!' );
     } else {
-      console.log("Включите вначале зажигание");
+      console.log('Включите вначале зажигание');
     }
   },
   stop: function() {
     if (this.engine) {
       this.engine = false;
       this.motion = false;
-      console.log("Машинка остановилась");
+      console.log('Машинка остановилась');
     } else {
-      console.log("Зажигание и так выключено");
+      console.log('Зажигание и так выключено');
     }
   },
   isFuel: function() {
     if (!this.fuel) {
-      console.log("Заправ мене!");
+      console.log('Заправ мене!');
     }
   },
   addFuel: function() {
@@ -68,9 +68,12 @@ var car = {
   }
 };
 
+/*3. Напишите функцию, которая получает на вход объект типа { Anna: 29, Misha: 35, Stepan: 1, Elena: 99 } 
+и возвращает имя ученика с наиболее высоким баллом.*/
+
 function showMaxRating(obj) {
   var maxRating = -Infinity;
-  var maxRatingPerson = "";
+  var maxRatingPerson = '';
 
   for (var key in obj) {
     if (maxRating < obj[key]) {
@@ -82,13 +85,15 @@ function showMaxRating(obj) {
 }
 console.log(showMaxRating({ Anna: 29, Misha: 35, Stepan: 1, Elena: 99 }));
 
+/*4. Напишите функцию, перемешивающую элементы массива в случайном порядке */
+
 function anyOrderArrey(arr) {
   var changeNumber;
 
   function minMax(min, max) {
     return Math.round(Math.random() * (max - min)) + min;
   }
-    
+
   for (var i = 0; i < arr.length * 2; i++) {
     changeNumber = minMax(0, arr.length);
     arr.push(arr[changeNumber]);
@@ -100,6 +105,8 @@ function anyOrderArrey(arr) {
 
 console.log(anyOrderArrey([1, 2, 3, 4, 5, 6, 7, 8, 9]));
 
+/* 5. Напишите функцию, которая возвращает сумму элементов массива */
+
 function arreySum(arr) {
   sum = 0;
   for (var i = 0; i < arr.length; i++) {
@@ -108,6 +115,8 @@ function arreySum(arr) {
   return sum;
 }
 console.log(arreySum([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+
+/* 6. Напишите функцию, которая возвращает максимальный элемент массива*/
 
 function maxElement(arr) {
   var max = 0;
@@ -122,36 +131,7 @@ function maxElement(arr) {
 
 console.log(maxElement([1, 2, 3, 4, 5, 6, 7, 8, 9]));
 
-
-
-function palindrome(str) {
-  var oppositeStr = ''; 
-  var clearStr = '';
-  str = str.toLowerCase();
-
-  for (var j = 0; j < str.length; j++) {
-    if (!(str[j] === ',' || str[j] === '!' || str[j] === '.' || str[j] === '?' || str[j] === ' ')) {
-      clearStr += str[j];    
-    }
-  };
-
-  console.log(clearStr); 
-  for (var i = str.length - 1; i >= 0; i--){
-    if (!(str[i] === ',' || str[i] === '!' || str[i] === '.' || str[i] === '?' || str[i] === ' ')) {
-      oppositeStr += str[i];    
-    } 
-  }
-
-  console.log(oppositeStr);     
-  return clearStr === oppositeStr;
-}
-
-console.log(palindrome('anna'));
-console.log(palindrome('sofia'));
-console.log(palindrome('А роза, упала? на лапу Азора'));
-
-
-
+/*A simple function for tasks 7/8*/
 
 function sortArr(arr) {
   var newArr = [],
@@ -171,8 +151,8 @@ function sortArr(arr) {
   }
   return newArr;
 }
-
-
+/*7. Напишите функцию, которая возвращает массив, состоящий из всех возможных непрерывных подмассивов данного массива.
+ Например: getSubArrays([1, 2, 3, 4]) => [ [1], [2], [3], [4], [1, 2], [2, 3], [3, 4], [1, 2, 3], [2, 3, 4], [1, 2, 3, 4] ]*/
 
 function uninteruptedArrey(inputArr) {
   var arr = sortArr(inputArr),
@@ -184,7 +164,6 @@ function uninteruptedArrey(inputArr) {
     counter = 0;
     for (var j = i; j < arr.length; j++){
       newArr[i].push(arr.slice(counter, counter + i + 1));
-      console.log(newArr);
       counter++;
     }
     
@@ -197,7 +176,9 @@ function uninteruptedArrey(inputArr) {
 
 console.log(uninteruptedArrey([1, 4, 2, 3]))
 
-
+/*-8. Напишите функцию, которая получает на вход массив чисел 
+типа [1, -2, 3, 4, -9, 6]. Задача – найти непрерывный подмассив,
+ сумма элементов которого максимальна. И вернуть эту сумму.--*/
 
 function maximalUninteruptedArrey(inputArr){  
   var newArr = [],
@@ -229,3 +210,34 @@ function maximalUninteruptedArrey(inputArr){
 }
 
 console.log(maximalUninteruptedArrey([6, -2, 2, 3, 5, 4, -9, 1]));
+
+/*--9. Палиндром - это строка которая читается с обоих сторон 
+одинаково. Например: Анна, оно, А роза упала на лапу Азора.
+ Напишите функцию, которая возвращает true или false в зависимости
+  от того является ли строка палиндромом или нет.--*/
+
+function palindrome(str) {
+  var oppositeStr = ''; 
+  var clearStr = '';
+  str = str.toLowerCase();
+
+  for (var j = 0; j < str.length; j++) {
+    if (!(str[j] === ',' || str[j] === '!' || str[j] === '.' || str[j] === '?' || str[j] === ' ')) {
+      clearStr += str[j];    
+    }
+  };
+
+  console.log(clearStr); 
+  for (var i = str.length - 1; i >= 0; i--){
+    if (!(str[i] === ',' || str[i] === '!' || str[i] === '.' || str[i] === '?' || str[i] === ' ')) {
+      oppositeStr += str[i];    
+    } 
+  }
+
+  console.log(oppositeStr);     
+  return clearStr === oppositeStr;
+}
+
+console.log(palindrome('anna'));
+console.log(palindrome('sofia'));
+console.log(palindrome('А роза, упала? на лапу Азора'));
