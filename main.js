@@ -23,8 +23,6 @@ function getMaximalNumbers(arr, maxResult) {
     'Образцы с наилучшими результатами под номерами' + arreyOfResults
   );
 }
-getMaxNumber(arr);
-getMaximalNumbers(arr, maxResult);
 
 var car = {
   brand: 'BMW',
@@ -83,7 +81,6 @@ function showMaxRating(obj) {
   }
   return maxRatingPerson;
 }
-console.log(showMaxRating({ Anna: 29, Misha: 35, Stepan: 1, Elena: 99 }));
 
 /*4. Напишите функцию, перемешивающую элементы массива в случайном порядке */
 
@@ -103,8 +100,6 @@ function anyOrderArrey(arr) {
   return arr;
 }
 
-console.log(anyOrderArrey([1, 2, 3, 4, 5, 6, 7, 8, 9]));
-
 /* 5. Напишите функцию, которая возвращает сумму элементов массива */
 
 function arreySum(arr) {
@@ -114,7 +109,6 @@ function arreySum(arr) {
   }
   return sum;
 }
-console.log(arreySum([1, 2, 3, 4, 5, 6, 7, 8, 9]));
 
 /* 6. Напишите функцию, которая возвращает максимальный элемент массива*/
 
@@ -128,8 +122,6 @@ function maxElement(arr) {
   }
   return max;
 }
-
-console.log(maxElement([1, 2, 3, 4, 5, 6, 7, 8, 9]));
 
 /*A simple function for tasks 7/8*/
 
@@ -151,6 +143,7 @@ function sortArr(arr) {
   }
   return newArr;
 }
+
 /*7. Напишите функцию, которая возвращает массив, состоящий из всех возможных непрерывных подмассивов данного массива.
  Например: getSubArrays([1, 2, 3, 4]) => [ [1], [2], [3], [4], [1, 2], [2, 3], [3, 4], [1, 2, 3], [2, 3, 4], [1, 2, 3, 4] ]*/
 
@@ -173,8 +166,6 @@ function uninteruptedArrey(inputArr) {
   console.log('Arrey : ' + newArr)
   return newArr
 }
-
-console.log(uninteruptedArrey([1, 4, 2, 3]))
 
 /*-8. Напишите функцию, которая получает на вход массив чисел 
 типа [1, -2, 3, 4, -9, 6]. Задача – найти непрерывный подмассив,
@@ -209,8 +200,6 @@ function maximalUninteruptedArrey(inputArr){
   return sum;
 }
 
-console.log(maximalUninteruptedArrey([6, -2, 2, 3, 5, 4, -9, 1]));
-
 /*--9. Палиндром - это строка которая читается с обоих сторон 
 одинаково. Например: Анна, оно, А роза упала на лапу Азора.
  Напишите функцию, которая возвращает true или false в зависимости
@@ -238,6 +227,15 @@ function palindrome(str) {
   return clearStr === oppositeStr;
 }
 
+
+getMaxNumber(arr);
+getMaximalNumbers(arr, maxResult);
+console.log(showMaxRating({ Anna: 29, Misha: 35, Stepan: 1, Elena: 99 }));
+console.log(anyOrderArrey([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+console.log(arreySum([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+console.log(maxElement([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+console.log(uninteruptedArrey([1, 4, 2, 3]))
+console.log(maximalUninteruptedArrey([6, -2, 2, 3, 5, 4, -9, 1]));
 console.log(palindrome('anna'));
 console.log(palindrome('sofia'));
 console.log(palindrome('А роза, упала? на лапу Азора'));
