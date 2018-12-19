@@ -3,7 +3,7 @@ var maxResult = 0;
 
 function getMaxNumber(arr) {
   for (var i = 0; i < arr.length; i++) {
-    console.log('Образец под номером' + (i + 1) + '- результат' + arr[i]);
+    console.log('Образец под номером ' + (i + 1) + ' - результат ' + arr[i]);
     if (maxResult < arr[i]) {
       maxResult = arr[i];
     }
@@ -13,14 +13,14 @@ function getMaxNumber(arr) {
 }
 
 function getMaximalNumbers(arr, maxResult) {
-  var arreyOfResults = [];
+  var arrayOfResults = [];
   for (var j = 0; j < arr.length; j++) {
     if (maxResult === arr[j]) {
-      arreyOfResults.push(j);
+      arrayOfResults.push(j);
     }
   }
   console.log(
-    'Образцы с наилучшими результатами под номерами' + arreyOfResults
+    'Образцы с наилучшими результатами под номерами' + arrayOfResults
   );
 }
 
@@ -84,7 +84,7 @@ function showMaxRating(obj) {
 
 /*4. Напишите функцию, перемешивающую элементы массива в случайном порядке */
 
-function anyOrderArrey(arr) {
+function anyOrderArray(arr) {
   var changeNumber;
 
   function minMax(min, max) {
@@ -102,7 +102,7 @@ function anyOrderArrey(arr) {
 
 /* 5. Напишите функцию, которая возвращает сумму элементов массива */
 
-function arreySum(arr) {
+function arraySum(arr) {
   sum = 0;
   for (var i = 0; i < arr.length; i++) {
     sum += arr[i];
@@ -120,6 +120,7 @@ function maxElement(arr) {
       max = arr[i]
     };
   }
+
   return max;
 }
 
@@ -141,13 +142,14 @@ function sortArr(arr) {
     arr[counter] = Infinity;
     newArr.push(res)
   }
+
   return newArr;
 }
 
 /*7. Напишите функцию, которая возвращает массив, состоящий из всех возможных непрерывных подмассивов данного массива.
  Например: getSubArrays([1, 2, 3, 4]) => [ [1], [2], [3], [4], [1, 2], [2, 3], [3, 4], [1, 2, 3], [2, 3, 4], [1, 2, 3, 4] ]*/
 
-function uninteruptedArrey(inputArr) {
+function uninteruptedArray(inputArr) {
   var arr = sortArr(inputArr),
   newArr = [],
   counter;
@@ -163,7 +165,8 @@ function uninteruptedArrey(inputArr) {
     
 
   }
-  console.log('Arrey : ' + newArr)
+  console.log('Array : ' + newArr)
+
   return newArr
 }
 
@@ -171,7 +174,7 @@ function uninteruptedArrey(inputArr) {
 типа [1, -2, 3, 4, -9, 6]. Задача – найти непрерывный подмассив,
  сумма элементов которого максимальна. И вернуть эту сумму.--*/
 
-function maximalUninteruptedArrey(inputArr){  
+function maximalUninteruptedArray(inputArr){  
   var newArr = [],
   counter = 0,
   sum = -Infinity,
@@ -195,7 +198,6 @@ function maximalUninteruptedArrey(inputArr){
       sum = add;        
     }
   }
-
   
   return sum;
 }
@@ -217,13 +219,11 @@ function palindrome(str) {
   };
 
   console.log(clearStr); 
-  for (var i = str.length - 1; i >= 0; i--){
-    if (!(str[i] === ',' || str[i] === '!' || str[i] === '.' || str[i] === '?' || str[i] === ' ')) {
-      oppositeStr += str[i];    
-    } 
+  for (var i = clearStr.length - 1; i >= 0; i--){   
+      oppositeStr += clearStr[i];    
   }
+  console.log(oppositeStr);
 
-  console.log(oppositeStr);     
   return clearStr === oppositeStr;
 }
 
@@ -231,11 +231,11 @@ function palindrome(str) {
 getMaxNumber(arr);
 getMaximalNumbers(arr, maxResult);
 console.log(showMaxRating({ Anna: 29, Misha: 35, Stepan: 1, Elena: 99 }));
-console.log(anyOrderArrey([1, 2, 3, 4, 5, 6, 7, 8, 9]));
-console.log(arreySum([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+console.log(anyOrderArray([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+console.log(arraySum([1, 2, 3, 4, 5, 6, 7, 8, 9]));
 console.log(maxElement([1, 2, 3, 4, 5, 6, 7, 8, 9]));
-console.log(uninteruptedArrey([1, 4, 2, 3]))
-console.log(maximalUninteruptedArrey([6, -2, 2, 3, 5, 4, -9, 1]));
+console.log(uninteruptedArray([1, 4, 2, 3]))
+console.log(maximalUninteruptedArray([6, -2, 2, 3, 5, 4, -9, 1]));
 console.log(palindrome('anna'));
 console.log(palindrome('sofia'));
 console.log(palindrome('А роза, упала? на лапу Азора'));
