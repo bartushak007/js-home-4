@@ -42,7 +42,7 @@ var car = {
   go: function() {
     if (this.engine) {
       this.motion = true;
-      console.log( 'Машина ' + this.year + ' марки ' + this.brand + ' цвета ' + this.color + ' поехала!' );
+      console.log('Машина ' + this.year + ' марки ' + this.brand + ' цвета ' + this.color + ' поехала!');
     } else {
       console.log('Включите вначале зажигание');
     }
@@ -116,9 +116,9 @@ function maxElement(arr) {
   var max = 0;
 
   for (var i = 0; i < arr.length; i++) {
-    if (arr[i] > max){
+    if (arr[i] > max) {
       max = arr[i]
-    };
+    }
   }
 
   return max;
@@ -133,8 +133,8 @@ function sortArr(arr) {
 
   for (var i = 0; i < arr.length; i++) {
     res = Infinity;
-    for (var j = arr.length-1; j >= 0; j--){
-      if(res > arr[j]){
+    for (var j = arr.length - 1; j >= 0; j--){
+      if (res > arr[j]){
         res = arr[j];
         counter = j;
       }
@@ -155,26 +155,23 @@ function uninteruptedArray(inputArr) {
   counter;
  
   for (var i = 0; i < arr.length; i++) {
-    newArr[i] = [];
+    
     counter = 0;
-    for (var j = i; j < arr.length; j++){
-      newArr[i].push(arr.slice(counter, counter + i + 1));
+    for (var j = i; j < arr.length; j++) {
+      newArr.push(arr.slice(counter, counter + i + 1));
       counter++;
     }
-    
-    
-
   }
-  console.log('Array : ' + newArr)
+  console.log('Array : ' + newArr);
 
-  return newArr
+  return newArr;
 }
 
 /*-8. Напишите функцию, которая получает на вход массив чисел 
 типа [1, -2, 3, 4, -9, 6]. Задача – найти непрерывный подмассив,
  сумма элементов которого максимальна. И вернуть эту сумму.--*/
 
-function maximalUninteruptedArray(inputArr){  
+function maximalUninteruptedArray(inputArr) {  
   var newArr = [],
   counter = 0,
   sum = -Infinity,
@@ -216,7 +213,7 @@ function palindrome(str) {
     if (!(str[j] === ',' || str[j] === '!' || str[j] === '.' || str[j] === '?' || str[j] === ' ')) {
       clearStr += str[j];    
     }
-  };
+  }
 
   console.log(clearStr); 
   for (var i = clearStr.length - 1; i >= 0; i--){   
@@ -234,7 +231,7 @@ console.log(showMaxRating({ Anna: 29, Misha: 35, Stepan: 1, Elena: 99 }));
 console.log(anyOrderArray([1, 2, 3, 4, 5, 6, 7, 8, 9]));
 console.log(arraySum([1, 2, 3, 4, 5, 6, 7, 8, 9]));
 console.log(maxElement([1, 2, 3, 4, 5, 6, 7, 8, 9]));
-console.log(uninteruptedArray([1, 4, 2, 3]))
+console.log(uninteruptedArray([1, 4, 2, 3]));
 console.log(maximalUninteruptedArray([6, -2, 2, 3, 5, 4, -9, 1]));
 console.log(palindrome('anna'));
 console.log(palindrome('sofia'));
