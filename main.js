@@ -133,8 +133,8 @@ function sortArr(arr) {
 
   for (var i = 0; i < arr.length; i++) {
     res = Infinity;
-    for (var j = arr.length - 1; j >= 0; j--){
-      if (res > arr[j]){
+    for (var j = arr.length - 1; j >= 0; j--) {
+      if (res > arr[j]) {
         res = arr[j];
         counter = j;
       }
@@ -216,8 +216,8 @@ function palindrome(str) {
   }
 
   console.log(clearStr); 
-  for (var i = clearStr.length - 1; i >= 0; i--){   
-      oppositeStr += clearStr[i];    
+  for (var i = clearStr.length - 1; i >= 0; i--) {   
+    oppositeStr += clearStr[i];    
   }
   console.log(oppositeStr);
 
